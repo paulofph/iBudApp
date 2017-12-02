@@ -5,17 +5,17 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components//home/home.component';
 
 import { ROUTES } from './app.routes';
 
-import { AuthService } from './auth/auth.service';
-import { ProfileComponent } from './profile/profile.component';
-import { CallbackComponent } from './callback/callback.component';
+import { AuthService } from './components//auth/auth.service';
+import { ProfileComponent } from './components//profile/profile.component';
+import { CallbackComponent } from './components//callback/callback.component';
 
 import { Http, RequestOptions } from '@angular/http';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
-import { PingComponent } from './ping/ping.component';
+import { PingComponent } from './components//ping/ping.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({

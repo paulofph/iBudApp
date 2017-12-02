@@ -19,12 +19,11 @@ export class PingComponent implements OnInit {
   }
 
   public securedPing(): void {
-    console.log('ping');
     this.message = '';
-    this.authHttp.get(`${this.API_URL}/values`)
+    this.authHttp.get(`${this.API_URL}/ping`)
       .map(res => res.json())
       .subscribe(
-        data => this.message = data.message,
+        data => console.log("data", data),
         error => this.message = error,
       );
   }
