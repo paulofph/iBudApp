@@ -13,12 +13,23 @@ import { AuthService } from './auth/auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { CallbackComponent } from './callback/callback.component';
 
+import { Http, RequestOptions } from '@angular/http';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { PingComponent } from './ping/ping.component';
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({
+    tokenGetter: (() => localStorage.getItem('access_token'))
+  }), http, options);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProfileComponent,
-    CallbackComponent
+    CallbackComponent,
+    PingComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +37,14 @@ import { CallbackComponent } from './callback/callback.component';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

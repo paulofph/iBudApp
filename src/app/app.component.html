@@ -29,6 +29,8 @@
         (click)="auth.logout()">
           Log Out
       </button>
+      
+      <app-ping *ngIf="auth.isAuthenticated()"></app-ping>
 
     </div>
   </div>
