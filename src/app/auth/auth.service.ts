@@ -48,7 +48,6 @@ export class AuthService {
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         self.userProfile = profile;
-        console.log(profile)
       }
       cb(err, profile);
     });
