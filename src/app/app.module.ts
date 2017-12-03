@@ -15,7 +15,10 @@ import { CallbackComponent } from './components//callback/callback.component';
 
 import { Http, RequestOptions } from '@angular/http';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
-import { PingComponent } from './components//ping/ping.component';
+import { PingComponent } from './components/ping/ping.component';
+
+
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -35,6 +38,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     BrowserModule,
     FormsModule,
     HttpModule,
+    
+    MatButtonModule, MatCheckboxModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
