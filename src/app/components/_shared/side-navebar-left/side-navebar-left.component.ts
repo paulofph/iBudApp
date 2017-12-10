@@ -8,14 +8,18 @@ import { Profile } from './../../../models/profile';
   styleUrls: ['./side-navebar-left.component.css']
 })
 export class SideNavebarLeftComponent implements OnInit {
-  @Input() user: Profile;
+  
+
+  private user: any;
 
   constructor(
     public auth: AuthService
   ) { }
 
   ngOnInit() {
-
+      this.auth.getProfile((err, profile) => {
+        this.user = profile;
+      });
   }
 
   private logout(){

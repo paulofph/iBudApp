@@ -27,5 +27,4 @@ export class PingComponent implements OnInit {
         error => this.message = error,
       );
   }
-
 }

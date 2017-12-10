@@ -34,13 +34,7 @@ export class AuthService {
         this.setSession(authResult);
         
         
-        if (this.userProfile) {
-          user = this.userProfile;
-        } else {
-          this.getProfile((err, profile) => {
-            user = profile;
-          });
-        }
+
         
         this.router.navigate(['/home']);
       } else if (err) {
@@ -68,7 +62,6 @@ export class AuthService {
   private setSession(authResult): void {
     // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    console.log(authResult.accessToken)
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
