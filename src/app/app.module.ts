@@ -18,7 +18,9 @@ import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { PingComponent } from './components/ping/ping.component';
 
 
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatGridListModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SideNavebarLeftComponent } from './components/_shared/side-navebar-left/side-navebar-left.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -32,14 +34,18 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     HomeComponent,
     ProfileComponent,
     CallbackComponent,
-    PingComponent
+    PingComponent,
+    SideNavebarLeftComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    
-    MatButtonModule, MatCheckboxModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Auth0 - Angular</a>
@@ -34,8 +34,16 @@
 
     </div>
   </div>
-</nav>
+</nav> -->
 
+
+<mat-sidenav-container fullscreen class="example-container" flex="50">
+    <mat-sidenav [class.mat-elevation-z20]="true" mode="side" opened="true" class="bkg-primary-light-green" style="width: 200px;">
+        <app-component-shared-side-navebar-left [user]="user"></app-component-shared-side-navebar-left>
+    </mat-sidenav>
+    <mat-sidenav-content>Main content</mat-sidenav-content>
+</mat-sidenav-container>
+<!-- 
 <main class="container">
   <router-outlet></router-outlet>
-</main>
+</main> -->

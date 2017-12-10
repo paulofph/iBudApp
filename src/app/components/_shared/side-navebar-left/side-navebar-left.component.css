@@ -1,0 +1,42 @@
+.avatar-container{
+    text-align: center;
+    padding-top: 12px;
+}
+
+.avatar{
+    border-radius: 50%;
+    height: 50px;
+}
+
+.navbar-name-container{
+    text-align: center;
+}
+
+.navbar-options-container{
+   
+}
+
+.navbar-option-container{
+    padding-left: 6px;
+    padding-top: 15px;
+    margin: auto;
+    height: 50px;
+}
+
+.navbar-option-container:hover{
+    color: #ffffff;
+    background: #00796b;
+}
+
+.icon-container{
+    padding-right: 6px;
+    float: left;
+}
+
+.icon-size{
+    font-size: 1.2em;
+}
+
+.option-text{
+    margin-top: 0px;
+}

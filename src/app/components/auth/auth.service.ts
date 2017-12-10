@@ -3,6 +3,7 @@ import { AUTH_CONFIG } from './auth0-variables';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
+import { Profile } from './../../models/profile';
 
 @Injectable()
 export class AuthService {
@@ -25,14 +26,25 @@ export class AuthService {
   }
 
   public handleAuthentication(): void {
+    let user:Profile;
+
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
+        
+        
+        if (this.userProfile) {
+          user = this.userProfile;
+        } else {
+          this.getProfile((err, profile) => {
+            user = profile;
+          });
+        }
+        
         this.router.navigate(['/home']);
       } else if (err) {
         this.router.navigate(['/home']);
-        console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });

@@ -1,0 +1,29 @@
+<div *ngIf="user" [class.mat-elevation-z4]="true" class="bkg-primary-green">
+    <div>
+        <img src="assets/2 logotipo-main.svg" alt="Peers">
+    </div>
+
+    <div class="avatar-container">
+        <img src="{{user.picture}}" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="font-white navbar-name-container">
+        <h6 style="padding-bottom: 12px;">{{user.nickname}}</h6>
+    </div>
+</div>
+
+
+<div class="bkg-primary-light-green navbar-options-container">
+
+    <div class="font-primary-dark-green navbar-option-container" (click)="logout()">
+        <div class="icon-container">
+            <i class="material-icons icon-size">exit_to_app</i>
+        </div>
+        <div>
+            <h5 class="option-text">Logout</h5>
+        </div>
+    </div>
+
+</div>
+
+

@@ -4,3 +4,38 @@
 .btn-margin {
   margin-top: 7px
 }
+
+.bkg-primary-green{
+  background: #00796b;
+}
+
+.font-primary-green{
+  color: #00796b;
+}
+
+.bkg-primary-light-green{
+  background: #48a999;
+}
+
+.font-primary-light-green{
+  color: #48a999;
+}
+
+.bkg-primary-dark-green{
+  background: #004c40;
+}
+
+.font-primary-dark-green{
+  color: #004c40;
+}
+
+.font-white{
+  color: #ffffff;
+}
+
+/* <resources>
+<color name="primaryColor">#00796b</color>
+<color name="primaryLightColor">#48a999</color>
+<color name="primaryDarkColor">#004c40</color>
+<color name="primaryTextColor">#ffffff</color>
+</resources> */
