@@ -11,12 +11,12 @@ export class AppComponent {
   user: Profile
 
   constructor(public auth: AuthService) {
-     this.auth.handleAuthentication();
+    //  this.auth.handleAuthentication();
   }
 
   ngOnInit() {
-    //this.auth.handleAuthentication();
-    //  if(!this.auth.isAuthenticated())
-    //    this.auth.login() 
+    this.auth.handleAuthentication();
+    if(!this.auth.isAuthenticated())
+       this.auth.login()
   }
 }

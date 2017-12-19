@@ -24,6 +24,6 @@ export class SideNavebarLeftComponent implements OnInit {
 
   private logout(){
     this.auth.logout();
-    this.auth.login()
+    this.auth.login();
   }
 }
